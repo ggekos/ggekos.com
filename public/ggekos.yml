@@ -1,4 +1,44 @@
-foo: bar
-bar:
-    foo: bar
-    bar: baz
+person:
+    first_name: Alexandre
+    last_name: Colella
+    email: contact@ggekos.com
+    title: Lead developer, full-stack, devops.
+    interest: Music, Magic The Gathering
+social:
+    facebook: https://www.facebook.com/alexandre.colella
+    twitter: https://twitter.com/ggekos
+    linkedin: https://www.linkedin.com/in/alexandrecolella/
+    github: https://github.com/ggekos
+experience:
+    gererseul:
+        title: Lead Developer
+        name: Gérer Seul
+        start: July 2018
+        end: now
+    quable:
+        title: Lead Developer
+        name: Quable
+        start: July 2016
+        end: June 2018
+    eldapps:
+        title: Full-stack Developer
+        name: Eldapps
+        start: June 2014
+        end: June 2016
+links:
+    gererseul:
+        name: Gérer Seul
+        url: https://www.gererseul.com/
+    mypawpie:
+        name: My Paw Pie
+        url: https://mypawpie.com/
+    quable:
+        name: Quable
+        url: https://www.quable.com/
+    spotwod:
+        name: Spotwod
+        url: http://www.spotwod.com/
+    parisautrement:
+        name: Paris Autrement
+        url: https://www.parisautrement.com
+
