@@ -8,6 +8,9 @@ use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\HttpFoundation\Response;
 
 class GgekosController extends Controller
 {
@@ -38,6 +41,37 @@ class GgekosController extends Controller
     }
 
     /**
+     * @Route("/blog/rss", name="blogRss")
+     */
+    public function rss(KernelInterface $kernel, Filesystem $filesystem) 
+    {
+        $finder = new Finder();
+        $finder->files()->in($kernel->getProjectDir().'/public/blog/');
+
+        $channel = [
+                'title' => 'ggekos.com',
+                'link' => 'https://ggekos.com',
+                'description' => 'description'
+            ];
+
+        foreach ($finder as $file) {
+            $channel['item'][] = Yaml::parseFile($file->getRealPath());
+        }
+
+        $encoder = new XmlEncoder();
+
+        $context = [
+            'xml_encoding' => 'iso-8859-1',
+            'xml_version' => '1.0',
+            'xml_root_node_name' => 'channel'];
+
+        $response = new Response($encoder->encode($channel, 'xml', $context));
+        $response->headers->set('Content-Type', 'xml');
+
+        return $response;
+    }
+
+    /**
      * @Route("/blog/{slug}", name="blogSingle")
      */
     public function single(KernelInterface $kernel, Filesystem $filesystem, $slug)
@@ -50,4 +84,5 @@ class GgekosController extends Controller
 
         return $this->render('ggekos/single.html.twig', Yaml::parseFile($path));
     }
+
 }
