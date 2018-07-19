@@ -32,7 +32,11 @@ class GgekosController extends Controller
         $finder->files()->in($kernel->getProjectDir().'/public/blog/');
 
         foreach ($finder as $file) {
-            $list[] = explode('.', $file->getFileName())[0];
+            $fileNameExplode = explode('.', $file->getFileName());
+
+            if (2 == count($fileNameExplode) && 'yml' == $fileNameExplode[1]) {
+                $list[] = $fileNameExplode[0];
+            }
         }
         
         return $this->render('ggekos/list.html.twig', [
