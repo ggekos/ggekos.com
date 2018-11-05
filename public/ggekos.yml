@@ -2,7 +2,7 @@ person:
     first_name: Alexandre
     last_name: Colella
     email: contact@ggekos.com
-    title: Lead developer, full-stack, devops.
+    title: CTO, full-stack, Devops.
     interest: Music, Magic The Gathering
     url: ggekos.com
 social:
@@ -12,7 +12,7 @@ social:
     github: https://github.com/ggekos
 experience:
     gererseul:
-        title: Lead Developer
+        title: CTO
         name: Gérer Seul
         start: July 2018
         end: now
@@ -26,19 +26,27 @@ experience:
         name: Eldapps
         start: June 2014
         end: June 2016
+    revstr:
+        title: Founder, CTO
+        name: Revstr
+        start: January 2013
+        end: April 2014
 links:
     gererseul:
         name: Gérer Seul
         url: https://www.gererseul.com/
+    polhy:
+        name: Polhy
+        url: https://polhy.fr
     mypawpie:
         name: My Paw Pie
-        url: https://mypawpie.com/
+        url: 
     quable:
         name: Quable
         url: https://www.quable.com/
     spotwod:
         name: Spotwod
-        url: http://www.spotwod.com/
+        url: 
     parisautrement:
         name: Paris Autrement
         url: https://www.parisautrement.com
