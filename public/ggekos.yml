@@ -1,10 +1,10 @@
 person:
     first_name: Alexandre
     last_name: Colella
-    email: contact@ggekos.com
+    email: alexandre@colella.fr
     title: CTO, full-stack, Devops.
     interest: Music, Magic The Gathering
-    url: ggekos.com
+    url: colella.fr
 social:
     facebook: https://www.facebook.com/alexandre.colella
     twitter: https://twitter.com/ggekos
@@ -13,7 +13,7 @@ social:
 experience:
     gererseul:
         title: CTO
-        name: Gérer Seul
+        name: Gérer Seul / LeBonBail
         start: July 2018
         end: now
     quable:
@@ -35,15 +35,18 @@ links:
     gererseul:
         name: Gérer Seul
         url: https://www.gererseul.com/
+    lebonbail:
+        name: LeBonBail
+        url: https://www.lebonbail.fr/
+    quable:
+        name: Quable
+        url: https://www.quable.com/
     polhy:
         name: Polhy
         url: https://polhy.fr
     mypawpie:
         name: My Paw Pie
         url: 
-    quable:
-        name: Quable
-        url: https://www.quable.com/
     spotwod:
         name: Spotwod
         url: 

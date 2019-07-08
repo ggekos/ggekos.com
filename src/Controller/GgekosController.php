@@ -53,8 +53,8 @@ class GgekosController extends Controller
         $finder->files()->in($kernel->getProjectDir().'/public/blog/');
 
         $channel = [
-                'title' => 'ggekos.com',
-                'link' => 'https://ggekos.com',
+                'title' => 'colella.fr',
+                'link' => 'https://colella.fr',
                 'description' => 'description'
             ];
 
