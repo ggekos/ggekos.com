@@ -21,13 +21,13 @@
             <div class="col-md-9 hidden-sm hidden-xs slideInRight">
                 <div class="main-menu">
                     <ul class="list-inline">
-                        <li><a href="#hello">Hello</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#education">Education</a></li>
+                        <li><a href="#hello">Bonjour</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#experience">Expériences</a></li>
+                        {# <li><a href="#education">Education</a></li> #}
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#feedback">Feedback</a></li>
-                        <li><a href="#contact">Contact me</a></li>
+                        {# <li><a href="#feedback">Feedback</a></li> #}
+                        <li><a href="#contact">Me contacter</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,13 +47,13 @@
     </div>
     <div class="mobile-menu">
         <ul>
-            <li><a href="#hello">Hello</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#hello">Bonjour</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#experience">Expériences</a></li>
+            {# <li><a href="#education">Education</a></li> #}
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#feedback">Feedback</a></li>
-            <li><a href="#contact">Contact me</a></li>
+            {# <li><a href="#feedback">Feedback</a></li> #}
+            <li><a href="#contact">Me contacter</a></li>
         </ul>
     </div>
 </div>
@@ -70,14 +70,11 @@
             <div class="col-md-6">
                 <div class="about-me wow slideInLeft">
                     <div class="about-me-title">
-                        <h1><span class="point">I am {{ person.first_name }} {{ person.last_name }}</span></h1>
+                        <h1><span class="point">{{ person.first_name }} {{ person.last_name }}</span></h1>
                     </div>
                     <div class="about-me-text">
                         <div class="opacity-box">
-                            <p>I am a Web Developer located in Hartford, Connecticut. I currently work
-                                as a part time Remote Junior Web Developer for Coolor, located in Las
-                                Vegas. I am looking to take on more work and to increase my skills as
-                                a Web Developer.</p>
+                            <p>Bonjour à tous, je suis Alexandre freelance.</p>
                         </div>
                     </div>
                     <div class="about-me-info">
@@ -88,10 +85,6 @@
                         <p>
                             <span class="span-title">Email</span>
                             <span>{{ person.email }}</span>
-                        </p>
-                        <p>
-                            <span class="span-title">Address</span>
-                            <span>3113 Lochmere Lane, Hartford, CA 06103</span>
                         </p>
                         <p>
                             <span class="span-title">Social</span>
@@ -136,9 +129,9 @@
             </div>
             <div class="col-md-4 wow slideInLeft">
                 <div class="section-sidebar">
-                    <h2><span class="point">Skills</span></h2>
+                    <h2><span class="point">Compétences</span></h2>
                     <div class="opacity-box">
-                        <p>I am inspired by creating great work with people who are as passionate as I am about building something awesome.</p>
+                        <p>Fullstack, devops, Moderne, Legacy</p>
                     </div>
                 </div>
             </div>
@@ -146,7 +139,7 @@
                 <div class="row">
                     <div class="col-md-6 wow zoomIn">
                         <div class="advantages-box">
-                            <h4>Web Development</h4>
+                            <h4>Developpement Web</h4>
                             <div class="opacity-box">
                                 <p>Javascript, Coffeescript, JAVA, Python, PHP, Go, Node.js, MongoDB, Redis, PostgreSQL, WebStorm. </p>
                             </div>
@@ -155,7 +148,7 @@
                     <div class="col-md-6 wow zoomIn">
                         <hr class="mobile-hr">
                         <div class="advantages-box">
-                            <h4>UI\UX Design</h4>
+                            <h4>DevOps</h4>
                             <div class="opacity-box">
                                 <p>Photoshop, Illustrator, Sketch, Axure, XMind, Prototyping, Wireframing, User Research, Usability Testing.</p>
                             </div>
@@ -165,18 +158,9 @@
                     <div class="col-md-6 wow zoomIn">
                         <hr>
                         <div class="advantages-box">
-                            <h4>Frontend Development</h4>
+                            <h4>Management</h4>
                             <div class="opacity-box">
                                 <p>HTML, CSS, LESS, SASS, Bootstrap, Wordpress, Drupal, Phonegap / Cordova, Ionic, Foundation, Angular.js.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow zoomIn">
-                        <hr>
-                        <div class="advantages-box">
-                            <h4>Consulting & SEO Audit</h4>
-                            <div class="opacity-box">
-                                <p>Screaming Frog, Woorank, Raventools, Semrush, Moz, WebCEO, Google Analytics, ChartBeat, CrazyEgg.</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +193,7 @@
             </div>
             <div class="col-md-4 wow slideInLeft">
                 <div class="section-sidebar">
-                    <h2><span class="point">Experience</span></h2>
+                    <h2><span class="point">Expériences</span></h2>
                     <div class="opacity-box">
                         <p>I partner with startups, organizations and Fortune 500 companies to build digital products
                             that help clients overcome challenges and create lasting connections with
@@ -239,7 +223,7 @@
     </div>
 </section>
 
-<section id="education" class="section">
+{# <section id="education" class="section">
     <div class="container">
         <div class="row wave-bg">
             <div class="zigzag wow slideInLeft">
@@ -300,7 +284,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 
 <section id="portfolio" class="section section-small-padding">
     <div class="container">
@@ -438,7 +422,7 @@
     </div>
 </section>
 
-<section id="feedback" class="section">
+{# <section id="feedback" class="section">
     <div class="container">
         <div class="row wave-bg">
             <div class="zigzag wow slideInLeft">
@@ -518,7 +502,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> #}
 
 <section id="contact" class="section">
     <div class="container">
@@ -543,10 +527,9 @@
             </div>
             <div class="col-md-4 wow slideInLeft">
                 <div class="section-sidebar">
-                    <h2><span class="point">Contact</span></h2>
+                    <h2><span class="point">Me contacter</span></h2>
                     <div class="opacity-box">
-                        <p>Are you working on something great? I would love to help make it
-                            happen! Drop me a letter and start your project right now! Just do it.</p>
+                        <p>N'hésitez pas à me contacter.</p>
                     </div>
                 </div>
             </div>
@@ -585,7 +568,7 @@
         <div class="row">
             <div class="col-md-12 wow zoomIn">
                 <div class="copyright">
-                    <p>Copyright 2017 Danny.</p>
+                    <p>Copyright 2019 Alexandre Colella.</p>
                 </div>
             </div>
         </div>
