@@ -5,6 +5,7 @@ person:
     title: CTO, full-stack, Devops.
     interest: Music, Magic The Gathering
     url: colella.fr
+    phone: "+33786077343"
 social:
     facebook: https://www.facebook.com/alexandre.colella
     twitter: https://twitter.com/ggekos
@@ -16,41 +17,75 @@ experience:
         name: Gérer Seul / LeBonBail
         start: July 2018
         end: now
+        info: |
+            Stack 1 : Symfony 3.4, Redis, Mysql
+            Stack 2 : Ruby On Rails, Postgres
+            Devops : Ansible
+
+            Réalisations :
+            Mise en place de deploiement automatisé
+            Cache doctrine
+            Sessions sous redis
+            Pont entre les deux stacks
+            Ajout de features
+            Monitoring
+            Mise en place méthode agile
+            Adaption du logiciel pour mise en place en marque blanche
     quable:
         title: Lead Developer
         name: Quable
         start: July 2016
         end: June 2018
+        info: |
+            Plateforme PIM en Saas.
+            Réferent technique.
+            Mise en place de nouvelles features (activités, historique, stockage blob, authentification Oauth).
+            Devops : scripts jenkins et docker. Mise en place de playbooks et de rôles ansible (provisionnement, installation, tâches de mises à jour).
+            Industrialisation de l’infrastructure (passage du modèle single tenant sur OVH à un modèle multi tenant sur Azure et AWS).
+            Création d’un moteur de template pour export pdf print.
     eldapps:
         title: Full-stack Developer
         name: Eldapps
         start: June 2014
         end: June 2016
+        info: |
+            Réalisation et amélioration de projet sous Symfony ( spotwod.com , parisautrement.com ) 
+            Connecteur Sage sous CodeIgniter 
+            Plugin pour Wordpress ( paysanbreton.fr , unepieceenplus.com ) 
+            Réalisation application mobile IOS en Xamarin.forms. ( flexig.com )
     revstr:
         title: Founder, CTO
         name: Revstr
         start: January 2013
         end: April 2014
+        info: 
 links:
     gererseul:
         name: Gérer Seul
-        url: https://www.gererseul.com/
+        url: https://www.gererseul.com
+        types: back front devops
     lebonbail:
         name: LeBonBail
-        url: https://www.lebonbail.fr/
+        url: https://www.lebonbail.fr
+        types: front
     quable:
         name: Quable
-        url: https://www.quable.com/
+        url: https://www.quable.com
+        types: back front devops
     polhy:
         name: Polhy
         url: https://polhy.fr
+        types: other
     mypawpie:
         name: My Paw Pie
-        url: 
+        url:
+        types: back front devops
     spotwod:
         name: Spotwod
-        url: 
+        url:
+        types: back front
     parisautrement:
         name: Paris Autrement
         url: https://www.parisautrement.com
+        types: back
 
