@@ -24,7 +24,7 @@
                         <li><a href="#hello">Bonjour</a></li>
                         <li><a href="#skills">Compétences</a></li>
                         <li><a href="#experience">Expériences</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        {# <li><a href="#portfolio">Portfolio</a></li> #}
                     </ul>
                 </div>
             </div>
@@ -56,19 +56,14 @@
 <section id="hello" class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 about-img-wrap">
-                <div class="about-img wow slideInRight">
-                    <img src="" alt="" class="img-responsive">
-                </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="about-me wow slideInLeft">
                     <div class="about-me-title">
                         <h1><span class="point">{{ person.first_name }} {{ person.last_name }}</span></h1>
                     </div>
                     <div class="about-me-text">
                         <div class="opacity-box">
-                            <p>Bonjour à tous, je suis Alexandre Colella, indépendant en Developpement Web.</p>
+                            <p>{{ person.bio }}</p>
                         </div>
                     </div>
                     <div class="about-me-info">
@@ -81,6 +76,10 @@
                             <span>{{ person.email }}</span>
                         </p>
                         <p>
+                            <span class="span-title">Public key</span>
+                            <span><a href="{{ person.email_pgp }}">link</a></span>
+                        </p>
+                        <p>
                             <span class="span-title">Social</span>
                             <span class="span-icons">
                                 <a target="_blank" href="{{ social.facebook }}" class="mdi fonts-icons mdi-facebook"></a>
@@ -90,6 +89,11 @@
                             </span>
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="about-img wow slideInRight">
+                    <img src="{{ person.img }}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -206,7 +210,7 @@
         </div>
     </div>
 </section>
-
+{# 
 <section id="portfolio" class="section section-small-padding">
     <div class="container">
         <div class="row">
@@ -236,7 +240,7 @@
                             <div class="col-md-3 col-sm-6 col-xs-6 mix {{ link.types }} wow flipInX">
                                 <a data-toggle="modal" data-target="#portfolio-modal" data-name="patty" title="Shop web app “Patty”" href="#" class="portfolio-box">
                                     <div class="portfolio-img">
-                                        <img src="media/portfolio-images/portfolio-1.jpg" alt="">
+                                        <img src="{{ link.img }}" alt="">
                                     </div>
                                     <div class="portfolio-name">
                                         <span>{{ link.name }}</span>
@@ -253,6 +257,7 @@
         </div>
     </div>
 </section>
+ #}
 
 <footer class="footer text-center">
     <div class="container">

@@ -2,10 +2,14 @@ person:
     first_name: Alexandre
     last_name: Colella
     email: alexandre@colella.fr
+    email_pgp: https://keys.mailvelope.com/pks/lookup?op=get&search=0xB6E486E06859D8D9
     title: CTO, full-stack, Devops.
     interest: Music, Magic The Gathering
     url: colella.fr
     phone: "+33786077343"
+    bio: Bonjour à tous, je suis Alexandre Colella, développeur full-stack et devops.
+    img: /img/0.jpeg
+
 social:
     facebook: https://www.facebook.com/alexandre.colella
     twitter: https://twitter.com/ggekos
@@ -64,28 +68,35 @@ links:
         name: Gérer Seul
         url: https://www.gererseul.com
         types: back front devops
+        img: /img/gs.png
     lebonbail:
         name: LeBonBail
         url: https://www.lebonbail.fr
         types: front
+        img: /img/lbb.svg
     quable:
         name: Quable
         url: https://www.quable.com
         types: back front devops
+        img: /img/quable.png
     polhy:
         name: Polhy
         url: https://polhy.fr
         types: other
+        img:
     mypawpie:
         name: My Paw Pie
         url:
         types: back front devops
+        img:
     spotwod:
         name: Spotwod
         url:
         types: back front
+        img:
     parisautrement:
         name: Paris Autrement
         url: https://www.parisautrement.com
         types: back
+        img:
 
