@@ -35,13 +35,15 @@ class GgekosController extends AbstractController
             $fileNameExplode = explode('.', $file->getFileName());
 
             if (2 == count($fileNameExplode) && 'yml' == $fileNameExplode[1]) {
-                $list[] = $fileNameExplode[0];
+                $list[] = Yaml::parseFile($file->getPathName());
             }
         }
         
-        return $this->render('ggekos/list.html.twig', [
+        return $this->render('ggekos/list.html.twig', array_merge([
             'list' => $list
-        ]);
+            ],
+            Yaml::parseFile($kernel->getProjectDir().'/public/ggekos.yml'))
+        );
     }
 
     /**
@@ -86,7 +88,12 @@ class GgekosController extends AbstractController
             //404
         }
 
-        return $this->render('ggekos/single.html.twig', Yaml::parseFile($path));
+        return $this->render('ggekos/single.html.twig', 
+            array_merge(
+                Yaml::parseFile($path),
+                Yaml::parseFile($kernel->getProjectDir().'/public/ggekos.yml')
+                )
+        );
     }
 
 }
