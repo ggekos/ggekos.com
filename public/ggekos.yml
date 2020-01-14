@@ -16,11 +16,18 @@ social:
     linkedin: https://www.linkedin.com/in/alexandrecolella/
     github: https://github.com/ggekos
 experience:
+    primaalab:
+        title: Devops
+        name: Primaa
+        start: February 2020
+        end: now
+        info: |
+
     gererseul:
         title: CTO
         name: Gérer Seul / LeBonBail
         start: July 2018
-        end: now
+        end: January 2020
         info: |
             Stack 1 : Symfony 3.4, Redis, Mysql
             Stack 2 : Ruby On Rails, Postgres
@@ -64,6 +71,11 @@ experience:
         end: April 2014
         info: 
 links:
+    primaalab:
+        name: Primaa
+        url: https://www.primaalab.com/
+        types: devops
+        img:
     gererseul:
         name: Gérer Seul
         url: https://www.gererseul.com
