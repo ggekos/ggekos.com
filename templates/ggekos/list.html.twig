@@ -1,5 +1,40 @@
-{% for single in list %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{person.first_name}} {{person.last_name}} - {{ person.url }}</title>
+        <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css" />
+    </head>
+    <body class="terminal">
+        <div class="terminal-nav">
+            <header class="terminal-logo">
+            <div class="logo terminal-prompt"><a href="" class="no-style">{{ person.url }}</a></div>
+            </header>
+            <nav class="terminal-menu">
+                <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                    <li><a href="{{ path('ggekos') }}#hello">Bonjour</a></li>
+                    <li><a href="{{ path('ggekos') }}#skills">Compétences</a></li>
+                    <li><a href="{{ path('ggekos') }}#experience">Expériences</a></li>
+                    <li><a href="{{ path('blogList') }}" class="menu-item active">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="terminal-timeline">
+            {% for single in list %}
+                <div class="terminal-card">
+                    <a href="{{ path('blogSingle', {slug: single.title})}}">
+                        <header>
+                            {{ single.title }}
+                        </header>
+                    </a>
+                    <div>
+                        {{ single.description|markdown }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
 
-    <a href="{{ path('blogSingle', {slug: single})}}">{{ single }}</a>
 
-{% endfor %}
