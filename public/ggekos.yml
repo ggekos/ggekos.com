@@ -3,11 +3,9 @@ person:
     last_name: Colella
     email: alexandre@colella.fr
     email_pgp: https://keys.mailvelope.com/pks/lookup?op=get&search=0xB6E486E06859D8D9
-    title: CTO, full-stack, Devops.
-    interest: Music, Magic The Gathering
     url: colella.fr
     phone: "+33786077343"
-    bio: Bonjour à tous, je suis Alexandre Colella, développeur full-stack et devops.
+    bio: Bonjour à tous, je suis Alexandre Colella, développeur Full Stack et DevOps.
     img: /img/0.jpeg
 
 social:
@@ -17,18 +15,35 @@ social:
     github: https://github.com/ggekos
 experience:
     primaalab:
-        title: Devops
+        title: Devops/MLOps
         name: Primaa
-        start: February 2020
-        end: now
-        info: |
-
+        start: Depuis Février 2020
+        end:
+        info: |+
+            Logiciel basé sur l'IA pour l'automation et l'amélioration des diagnostiques en histologie.
+            Cloud Azure. Azure fonctions, message bus.
+            DevOps/MLOps :
+                Ansible, Jenkins, Rundeck, Docker
+            Applications front :
+                Angular
+            Applications back :
+                ExpressJs
+                Django
+            Machine Learning :
+                TensorFlow/Keras
+            
+            Réalisations : 
+                Mise en place de la philosphie DevOps ainsi que le Software craftsmanship.
+                Dockerisation de toutes les applications, support pour la dockerisation machine learning.
+                Création des CI/CD.
+                Tooling pour le machine learning.
+                Optimisation des temps de calcul avec le passage sur du serverless.
     gererseul:
         title: CTO
         name: Gérer Seul / LeBonBail
-        start: July 2018
-        end: January 2020
-        info: |
+        start: Juillet 2018
+        end: Janvier 2020
+        info: |+
             Stack 1 : Symfony 3.4, Redis, Mysql
             Stack 2 : Ruby On Rails, Postgres
             Devops : Ansible
@@ -45,9 +60,9 @@ experience:
     quable:
         title: Lead Developer
         name: Quable
-        start: July 2016
-        end: June 2018
-        info: |
+        start: Juillet 2016
+        end: Juin 2018
+        info: |+
             Plateforme PIM en Saas.
             Réferent technique.
             Mise en place de nouvelles features (activités, historique, stockage blob, authentification Oauth).
@@ -57,9 +72,10 @@ experience:
     eldapps:
         title: Full-stack Developer
         name: Eldapps
-        start: June 2014
-        end: June 2016
-        info: |
+        start: Juin 2014
+        end: Juin 2016
+        info: |+
+            Agence web.
             Réalisation et amélioration de projet sous Symfony ( spotwod.com , parisautrement.com ) 
             Connecteur Sage sous CodeIgniter 
             Plugin pour Wordpress ( paysanbreton.fr , unepieceenplus.com ) 
@@ -67,48 +83,10 @@ experience:
     revstr:
         title: Founder, CTO
         name: Revstr
-        start: January 2013
-        end: April 2014
-        info: 
-links:
-    primaalab:
-        name: Primaa
-        url: https://www.primaalab.com/
-        types: devops
-        img:
-    gererseul:
-        name: Gérer Seul
-        url: https://www.gererseul.com
-        types: back front devops
-        img: /img/gs.png
-    lebonbail:
-        name: LeBonBail
-        url: https://www.lebonbail.fr
-        types: front
-        img: /img/lbb.svg
-    quable:
-        name: Quable
-        url: https://www.quable.com
-        types: back front devops
-        img: /img/quable.png
-    polhy:
-        name: Polhy
-        url: https://polhy.fr
-        types: other
-        img:
-    mypawpie:
-        name: My Paw Pie
-        url:
-        types: back front devops
-        img:
-    spotwod:
-        name: Spotwod
-        url:
-        types: back front
-        img:
-    parisautrement:
-        name: Paris Autrement
-        url: https://www.parisautrement.com
-        types: back
-        img:
+        start: Janvier 2013
+        end: Avril 2014
+        info: |+
+            Plateforme de financement participatif.
+            Lisbon Challenge
+            StartUp Chile
 
