@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+    nginx:
+        build: docker/nginx
+        volumes:
+            - "./:/app"
+        links:
+            - php
+        ports:
+            - "83:80"
+
+    php:
+        build: docker/php
+        environment:
+            - APP_ENV=prod
+        volumes:
+            - "./:/app"
