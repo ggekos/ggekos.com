@@ -15,7 +15,7 @@ social:
     github: https://github.com/ggekos
 experience:
     primaalab:
-        title: Devops/MLOps
+        title: Team Leader application
         name: Primaa
         start: Depuis Février 2020
         end:
@@ -28,11 +28,11 @@ experience:
                 Angular
             Applications back :
                 ExpressJs
-                Django
             Machine Learning :
                 TensorFlow/Keras
             
             Réalisations : 
+                Management de l'équipe application.
                 Mise en place de la philosphie DevOps ainsi que le Software craftsmanship.
                 Dockerisation de toutes les applications, support pour la dockerisation machine learning.
                 Création des CI/CD.
