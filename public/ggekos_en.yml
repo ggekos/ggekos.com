@@ -1,0 +1,102 @@
+person:
+    first_name: Alexandre
+    last_name: Colella
+    email: alexandre@colella.fr
+    email_pgp: https://keys.mailvelope.com/pks/lookup?op=get&search=0xB6E486E06859D8D9
+    url: colella.fr
+    phone: "+33786077343"
+    bio: Hi, I'm Alexandre Colella, software developer and devops.
+    img: /img/0.jpeg
+
+social:
+    facebook: https://www.facebook.com/alexandre.colella
+    twitter: https://twitter.com/ggekos
+    linkedin: https://www.linkedin.com/in/alexandrecolella/
+    github: https://github.com/ggekos
+
+side_projects:
+    popsink:
+        title: Popsink
+        url: https://popsink.dev
+    
+    lipock:
+        title: Lipock
+        url: https://lipock.com
+
+experience:
+    primaalab:
+        title: Team Leader application
+        name: Primaa
+        start: Depuis Février 2020
+        end:
+        info: |+
+            Logiciel basé sur l'IA pour l'automation et l'amélioration des diagnostiques en histologie.
+            Cloud Azure. Azure fonctions, message bus.
+            DevOps/MLOps :
+                Ansible, Jenkins, Rundeck, Docker
+            Applications front :
+                Angular
+            Applications back :
+                ExpressJs
+            Machine Learning :
+                TensorFlow/Keras
+            
+            Réalisations : 
+                Management de l'équipe application.
+                Mise en place de la philosphie DevOps ainsi que le Software craftsmanship.
+                Dockerisation de toutes les applications, support pour la dockerisation machine learning.
+                Création des CI/CD.
+                Tooling pour le machine learning.
+                Optimisation des temps de calcul avec le passage sur du serverless.
+    gererseul:
+        title: CTO
+        name: Gérer Seul / LeBonBail
+        start: Juillet 2018
+        end: Janvier 2020
+        info: |+
+            Stack 1 : Symfony 3.4, Redis, Mysql
+            Stack 2 : Ruby On Rails, Postgres
+            Devops : Ansible
+
+            Réalisations :
+            Mise en place de deploiement automatisé
+            Cache doctrine
+            Sessions sous redis
+            Pont entre les deux stacks
+            Ajout de features
+            Monitoring
+            Mise en place méthode agile
+            Adaption du logiciel pour mise en place en marque blanche
+    quable:
+        title: Lead Developer
+        name: Quable
+        start: Juillet 2016
+        end: Juin 2018
+        info: |+
+            Plateforme PIM en Saas.
+            Réferent technique.
+            Mise en place de nouvelles features (activités, historique, stockage blob, authentification Oauth).
+            Devops : scripts jenkins et docker. Mise en place de playbooks et de rôles ansible (provisionnement, installation, tâches de mises à jour).
+            Industrialisation de l’infrastructure (passage du modèle single tenant sur OVH à un modèle multi tenant sur Azure et AWS).
+            Création d’un moteur de template pour export pdf print.
+    eldapps:
+        title: Full-stack Developer
+        name: Eldapps
+        start: Juin 2014
+        end: Juin 2016
+        info: |+
+            Agence web.
+            Réalisation et amélioration de projet sous Symfony ( spotwod.com , parisautrement.com ) 
+            Connecteur Sage sous CodeIgniter 
+            Plugin pour Wordpress ( paysanbreton.fr , unepieceenplus.com ) 
+            Réalisation application mobile IOS en Xamarin.forms. ( flexig.com )
+    revstr:
+        title: Founder, CTO
+        name: Revstr
+        start: Janvier 2013
+        end: Avril 2014
+        info: |+
+            Plateforme de financement participatif.
+            Lisbon Challenge
+            StartUp Chile
+

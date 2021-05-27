@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,200 +9,222 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
     <link href="https://cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-xs-8 slideInLeft">
-                <div class="logo">
-                    <span class="point">{{ person.url }}</span>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-8 slideInLeft">
+                    <div class="logo">
+                        <span class="point">{{ person.url }}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-9 hidden-sm hidden-xs slideInRight">
-                <div class="main-menu">
-                    <ul class="list-inline">
-                        <li><a href="#hello">Bonjour</a></li>
-                        <li><a href="#skills">Compétences</a></li>
-                        <li><a href="#experience">Expériences</a></li>
-                        {# <li><a href="{{ path('blogList') }}">Blog</a></li> #}
-                    </ul>
+                <div class="col-md-9 hidden-sm hidden-xs slideInRight">
+                    <div class="main-menu">
+                        <ul class="list-inline">
+                            <li><a href="#hello">Bonjour</a></li>
+                            <li><a href="#skills">Compétences</a></li>
+                            <li><a href="#experience">Expériences</a></li>
+                            {% if locale == "fr" %}
+                            <li><a href="?locale=en">EN</a></li>
+                            {% else %}
+                            <li><a href="?locale=fr">FR</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-4 hidden-lg hidden-md slideInRight">
-                <div class="mobile-btn">
-                    <span><i class="mdi mdi-menu" aria-hidden="true"></i></span>
+                <div class="col-xs-4 hidden-lg hidden-md slideInRight">
+                    <div class="mobile-btn">
+                        <span><i class="mdi mdi-menu" aria-hidden="true"></i></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- Mobile menu -->
-<div class="mob-menu-wrapper hidden-md hidden-lg">
-    <div class="close-mob-menu">
-        <span><i class="mdi mdi-close" aria-hidden="true"></i></span>
+    <!-- Mobile menu -->
+    <div class="mob-menu-wrapper hidden-md hidden-lg">
+        <div class="close-mob-menu">
+            <span><i class="mdi mdi-close" aria-hidden="true"></i></span>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#hello">Bonjour</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                {% if locale == "fr" %}
+                <li><a href="?locale=en">EN</a></li>
+                {% else %}
+                <li><a href="?locale=fr">FR</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </div>
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="#hello">Bonjour</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#experience">Expériences</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-    </div>
-</div>
-<!-- Mobile menu -->
+    <!-- Mobile menu -->
 
-<section id="hello" class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="about-me wow slideInLeft">
-                    <div class="about-me-title">
-                        <h1><span class="point">{{ person.first_name }} {{ person.last_name }}</span></h1>
+    <section id="hello" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="about-me wow slideInLeft">
+                        <div class="about-me-title">
+                            <h1><span class="point">{{ person.first_name }} {{ person.last_name
+                                    }}</span></h1>
+                        </div>
+                        <div class="about-me-text">
+                            <div class="opacity-box">
+                                <p>{{ person.bio }}</p>
+                            </div>
+                        </div>
+                        <div class="about-me-info">
+                            <p>
+                                <span class="span-title">Téléphone</span>
+                                <span>{{ person.phone }}</span>
+                            </p>
+                            <p>
+                                <span class="span-title">Email</span>
+                                <span>{{ person.email }}</span>
+                            </p>
+                            <p>
+                                <span class="span-title">Clé public</span>
+                                <span><a href="{{ person.email_pgp }}">link</a></span>
+                            </p>
+                            <p>
+                                <span class="span-title">Social</span>
+                                <span class="span-icons">
+                                    <a target="_blank" href="{{ social.facebook }}"
+                                        class="mdi fonts-icons mdi-facebook"></a>
+                                    <a target="_blank" href="{{ social.twitter }}"
+                                        class="mdi fonts-icons mdi-twitter"></a>
+                                    <a target="_blank" href="{{ social.linkedin }}"
+                                        class="mdi fonts-icons mdi-linkedin"></a>
+                                    <a target="_blank" href="{{ social.github }}"
+                                        class="mdi fonts-icons mdi-github-circle"></a>
+                                </span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="about-me-text">
+                </div>
+                <div class="col-md-4">
+                    <div class="about-img wow slideInRight">
+                        <img src="{{ person.img }}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="row wave-bg">
+                <div class="zigzag wow slideInLeft">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
+                        <g>
+                            <rect class="st0" width="105" height="20" />
+                            <g>
+                                <polyline class="st1"
+                                    points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   " />
+                            </g>
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
+                        <g>
+                            <rect class="st0" width="105" height="20" />
+                            <g>
+                                <polyline class="st1"
+                                    points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   " />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="col-md-4 wow slideInLeft">
+                    <div class="section-sidebar">
+                        <h2><span class="point">Compétences</span></h2>
                         <div class="opacity-box">
-                            <p>{{ person.bio }}</p>
+                            <p>Back End, Front End, DevOps, Lead, Management</p>
                         </div>
-                    </div>
-                    <div class="about-me-info">
-                        <p>
-                            <span class="span-title">Téléphone</span>
-                            <span>{{ person.phone }}</span>
-                        </p>
-                        <p>
-                            <span class="span-title">Email</span>
-                            <span>{{ person.email }}</span>
-                        </p>
-                        <p>
-                            <span class="span-title">Clé public</span>
-                            <span><a href="{{ person.email_pgp }}">link</a></span>
-                        </p>
-                        <p>
-                            <span class="span-title">Social</span>
-                            <span class="span-icons">
-                                <a target="_blank" href="{{ social.facebook }}" class="mdi fonts-icons mdi-facebook"></a>
-                                <a target="_blank" href="{{ social.twitter }}" class="mdi fonts-icons mdi-twitter"></a>
-                                <a target="_blank" href="{{ social.linkedin }}" class="mdi fonts-icons mdi-linkedin"></a>
-                                <a target="_blank" href="{{ social.github }}" class="mdi fonts-icons mdi-github-circle"></a>
-                            </span>
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="about-img wow slideInRight">
-                    <img src="{{ person.img }}" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="skills" class="section">
-    <div class="container">
-        <div class="row wave-bg">
-            <div class="zigzag wow slideInLeft">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
-                    <g>
-                        <rect class="st0" width="105" height="20"/>
-                        <g>
-                            <polyline class="st1" points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   "/>
-                        </g>
-                    </g>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
-                    <g>
-                        <rect class="st0" width="105" height="20"/>
-                        <g>
-                            <polyline class="st1" points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   "/>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <div class="col-md-4 wow slideInLeft">
-                <div class="section-sidebar">
-                    <h2><span class="point">Compétences</span></h2>
-                    <div class="opacity-box">
-                        <p>Back End, Front End, DevOps, Lead, Management</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-6 wow zoomIn">
-                        <div class="advantages-box">
-                            <h4>Developpement</h4>
-                            <div class="opacity-box">
-                                <p>Symfony, Python, Express, Ember, Vue.</p>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6 wow zoomIn">
+                            <div class="advantages-box">
+                                <h4>Developpement</h4>
+                                <div class="opacity-box">
+                                    <p>Symfony, Python, Express, Ember, Vue.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 wow zoomIn">
-                        <hr class="mobile-hr">
-                        <div class="advantages-box">
-                            <h4>DevOps</h4>
-                            <div class="opacity-box">
-                                <p>Ansible, Jenkins, Rundeck, Docker, Terraform.</p>
+                        <div class="col-md-6 wow zoomIn">
+                            <hr class="mobile-hr">
+                            <div class="advantages-box">
+                                <h4>DevOps</h4>
+                                <div class="opacity-box">
+                                    <p>Ansible, Jenkins, Rundeck, Docker, Terraform.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 wow zoomIn">
-                        <hr>
-                        <div class="advantages-box">
-                            <h4>Management</h4>
-                            <div class="opacity-box">
-                                <p>Agile, Scrum.</p>
+                        <div class="col-md-6 wow zoomIn">
+                            <hr>
+                            <div class="advantages-box">
+                                <h4>Management</h4>
+                                <div class="opacity-box">
+                                    <p>Agile, Scrum.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 wow zoomIn">
-                        <hr>
-                        <div class="advantages-box">
-                            <h4>Cloud</h4>
-                            <div class="opacity-box">
-                                <p>Azure, AWS.</p>
+                        <div class="col-md-6 wow zoomIn">
+                            <hr>
+                            <div class="advantages-box">
+                                <h4>Cloud</h4>
+                                <div class="opacity-box">
+                                    <p>Azure, AWS.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="experience" class="section">
-    <div class="container">
-        <div class="row wave-bg">
-            <div class="zigzag wow slideInLeft">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
-                    <g>
-                       <rect class="st0" width="105" height="20"/>
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="row wave-bg">
+                <div class="zigzag wow slideInLeft">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
                         <g>
-                            <polyline class="st1" points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   "/>
+                            <rect class="st0" width="105" height="20" />
+                            <g>
+                                <polyline class="st1"
+                                    points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   " />
+                            </g>
                         </g>
-                    </g>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
-                    <g>
-                        <rect class="st0" width="105" height="20"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 105 20" xml:space="preserve">
                         <g>
-                            <polyline class="st1" points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   "/>
+                            <rect class="st0" width="105" height="20" />
+                            <g>
+                                <polyline class="st1"
+                                    points="2.5,5 16.8,15 31.1,5 45.3,15 59.6,5 73.9,15 88.2,5 102.5,15   " />
+                            </g>
                         </g>
-                    </g>
-                </svg>
-            </div>
-            <div class="col-md-4 wow slideInLeft">
-                <div class="section-sidebar">
-                    <h2><span class="point">Expériences</span></h2>
+                    </svg>
                 </div>
-            </div>
-            <div class="col-md-8 right-box">
-                {% for experience in experience %}
+                <div class="col-md-4 wow slideInLeft">
+                    <div class="section-sidebar">
+                        <h2><span class="point">Expériences</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-8 right-box">
+                    {% for experience in experience %}
                     <div class="row wow zoomIn">
                         <div class="col-md-12">
                             <div class="about-row">
@@ -215,40 +238,41 @@
                         </div>
                     </div>
                     <hr>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-{# 
-<section id="portfolio" class="section section-small-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-title wow slideInLeft">
-                    <h2><span class="point">Portfolio</span></h2>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="portfolio-sort wow slideInLeft">
-                    <ul class="list-inline">
-                        <li class="colored-link" data-mixitup-control data-filter="all">All projects</li>
-                        <li class="colored-link" data-mixitup-control data-filter=".back">Back End</li>
-                        <li class="colored-link" data-mixitup-control data-filter=".front">Front End</li>
-                        <li class="colored-link" data-mixitup-control data-filter=".devops">Devops</li>
-                    </ul>
+    </section>
+    {#
+    <section id="portfolio" class="section section-small-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title wow slideInLeft">
+                        <h2><span class="point">Portfolio</span></h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="portfolio">
-                    <div class="row">
-                        {% for link in links %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portfolio-sort wow slideInLeft">
+                        <ul class="list-inline">
+                            <li class="colored-link" data-mixitup-control data-filter="all">All projects</li>
+                            <li class="colored-link" data-mixitup-control data-filter=".back">Back End</li>
+                            <li class="colored-link" data-mixitup-control data-filter=".front">Front End</li>
+                            <li class="colored-link" data-mixitup-control data-filter=".devops">Devops</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portfolio">
+                        <div class="row">
+                            {% for link in links %}
                             <div class="col-md-3 col-sm-6 col-xs-6 mix {{ link.types }} wow flipInX">
-                                <a data-toggle="modal" data-target="#portfolio-modal" data-name="patty" title="Shop web app “Patty”" href="#" class="portfolio-box">
+                                <a data-toggle="modal" data-target="#portfolio-modal" data-name="patty"
+                                    title="Shop web app “Patty”" href="#" class="portfolio-box">
                                     <div class="portfolio-img">
                                         <img src="{{ link.img }}" alt="">
                                     </div>
@@ -260,38 +284,39 @@
                                     </div>
                                 </a>
                             </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
- #}
+    </section>
+    #}
 
-<footer class="footer text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 wow zoomIn">
-                <div class="copyright">
-                    <p>Copyright {{"now"|date("Y")}} Alexandre Colella.</p>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow zoomIn">
+                    <div class="copyright">
+                        <p>Alexandre Colella {{"now"|date("Y")}}.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script src="js/jquery-2.2.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-<script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
 
-<!--Mix It Up-->
-<script src="assets/mixitup-v3/dist/mixitup.min.js"></script>
+    <!--Mix It Up-->
+    <script src="assets/mixitup-v3/dist/mixitup.min.js"></script>
 
-<!--THEME-->
-<script src="js/wow.min.js"></script>
+    <!--THEME-->
+    <script src="js/wow.min.js"></script>
 
-<script src="js/theme.js"></script>
+    <script src="js/theme.js"></script>
 </body>
+
 </html>

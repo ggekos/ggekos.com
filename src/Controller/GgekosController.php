@@ -11,22 +11,26 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class GgekosController extends AbstractController
 {
     /**
      * @Route("/", name="ggekos")
      */
-    public function index(KernelInterface $kernel)
+    public function index(Request $request, KernelInterface $kernel)
     {
-        return $this->render('ggekos/index.html.twig', 
-            Yaml::parseFile($kernel->getProjectDir().'/public/ggekos.yml'));
+        return $this->render('ggekos/index.html.twig',array_merge(
+            ["locale" => $this->detectLanguage($request)],
+            Yaml::parseFile($kernel->getProjectDir().'/public/ggekos_'.$this->detectLanguage($request).'.yml')
+        ),
+        );
     }
 
     /**
      * @Route("/blog", name="blogList")
      */
-    public function list(KernelInterface $kernel)
+    public function list(Request $request, KernelInterface $kernel)
     {
         $finder = new Finder();
         $finder->files()->in($kernel->getProjectDir().'/public/blog/');
@@ -42,7 +46,7 @@ class GgekosController extends AbstractController
         return $this->render('ggekos/list.html.twig', array_merge([
             'list' => $list
             ],
-            Yaml::parseFile($kernel->getProjectDir().'/public/ggekos.yml'))
+            Yaml::parseFile($kernel->getProjectDir().'/public/ggekos_'.$this->detectLanguage($request).'.yml'))
         );
     }
 
@@ -80,7 +84,7 @@ class GgekosController extends AbstractController
     /**
      * @Route("/blog/{slug}", name="blogSingle")
      */
-    public function single(KernelInterface $kernel, Filesystem $filesystem, $slug)
+    public function single(Request $request, KernelInterface $kernel, Filesystem $filesystem, $slug)
     {
         $path = $kernel->getProjectDir().'/public/blog/'.$slug.'.yml';
 
@@ -91,9 +95,23 @@ class GgekosController extends AbstractController
         return $this->render('ggekos/single.html.twig', 
             array_merge(
                 Yaml::parseFile($path),
-                Yaml::parseFile($kernel->getProjectDir().'/public/ggekos.yml')
+                Yaml::parseFile($kernel->getProjectDir().'/public/ggekos_'.$this->detectLanguage($request).'.yml')
                 )
         );
     }
 
+
+    /** 
+     * 
+    */
+    private function detectLanguage(Request $request)
+    {
+        $availableLocales = ["fr", "en"];
+
+        if (in_array($locale = $request->query->get('locale'), $availableLocales)) {
+            return $locale;
+        }
+
+        return $request->getPreferredLanguage($availableLocales);
+    }
 }

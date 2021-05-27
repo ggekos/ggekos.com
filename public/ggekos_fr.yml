@@ -13,6 +13,16 @@ social:
     twitter: https://twitter.com/ggekos
     linkedin: https://www.linkedin.com/in/alexandrecolella/
     github: https://github.com/ggekos
+
+side_projects:
+    popsink:
+        title: Popsink
+        url: https://popsink.dev
+    
+    lipock:
+        title: Lipock
+        url: https://lipock.com
+
 experience:
     primaalab:
         title: Team Leader application
