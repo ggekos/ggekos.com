@@ -13,6 +13,6 @@ services:
     php:
         build: docker/php
         environment:
-            - APP_ENV=dev
+            - APP_ENV=prod
         volumes:
             - "./:/app"

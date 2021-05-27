@@ -23,9 +23,10 @@
                 <div class="col-md-9 hidden-sm hidden-xs slideInRight">
                     <div class="main-menu">
                         <ul class="list-inline">
-                            <li><a href="#hello">Bonjour</a></li>
-                            <li><a href="#skills">Compétences</a></li>
-                            <li><a href="#experience">Expériences</a></li>
+                            <li><a href="#hello">{{ hi }}</a></li>
+                            <li><a href="#skills">{{skills }}</a></li>
+                            <li><a href="#experience">{{ experiences }}</a></li>
+                            <li><a href="#side">Side projects</a></li>
                             {% if locale == "fr" %}
                             <li><a href="?locale=en">EN</a></li>
                             {% else %}
@@ -50,9 +51,10 @@
         </div>
         <div class="mobile-menu">
             <ul>
-                <li><a href="#hello">Bonjour</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#hello">{{ hi }}</a></li>
+                <li><a href="#skills">{{skills }}</a></li>
+                <li><a href="#experience">{{ experiences }}</a></li>
+                <li><a href="#side">Side projects</a></li>
                 {% if locale == "fr" %}
                 <li><a href="?locale=en">EN</a></li>
                 {% else %}
@@ -79,7 +81,7 @@
                         </div>
                         <div class="about-me-info">
                             <p>
-                                <span class="span-title">Téléphone</span>
+                                <span class="span-title">{{ phone }}</span>
                                 <span>{{ person.phone }}</span>
                             </p>
                             <p>
@@ -87,7 +89,7 @@
                                 <span>{{ person.email }}</span>
                             </p>
                             <p>
-                                <span class="span-title">Clé public</span>
+                                <span class="span-title">public_key</span>
                                 <span><a href="{{ person.email_pgp }}">link</a></span>
                             </p>
                             <p>
@@ -142,7 +144,7 @@
                 </div>
                 <div class="col-md-4 wow slideInLeft">
                     <div class="section-sidebar">
-                        <h2><span class="point">Compétences</span></h2>
+                        <h2><span class="point">{{ skills }}</span></h2>
                         <div class="opacity-box">
                             <p>Back End, Front End, DevOps, Lead, Management</p>
                         </div>
@@ -220,7 +222,7 @@
                 </div>
                 <div class="col-md-4 wow slideInLeft">
                     <div class="section-sidebar">
-                        <h2><span class="point">Expériences</span></h2>
+                        <h2><span class="point">{{experiences }}</span></h2>
                     </div>
                 </div>
                 <div class="col-md-8 right-box">
@@ -243,25 +245,12 @@
             </div>
         </div>
     </section>
-    {#
-    <section id="portfolio" class="section section-small-padding">
+    <section id="side" class="section section-small-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title wow slideInLeft">
-                        <h2><span class="point">Portfolio</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="portfolio-sort wow slideInLeft">
-                        <ul class="list-inline">
-                            <li class="colored-link" data-mixitup-control data-filter="all">All projects</li>
-                            <li class="colored-link" data-mixitup-control data-filter=".back">Back End</li>
-                            <li class="colored-link" data-mixitup-control data-filter=".front">Front End</li>
-                            <li class="colored-link" data-mixitup-control data-filter=".devops">Devops</li>
-                        </ul>
+                        <h2><span class="point">Side projects</span></h2>
                     </div>
                 </div>
             </div>
@@ -269,18 +258,18 @@
                 <div class="col-md-12">
                     <div class="portfolio">
                         <div class="row">
-                            {% for link in links %}
-                            <div class="col-md-3 col-sm-6 col-xs-6 mix {{ link.types }} wow flipInX">
+                            {% for side_project in side_projects %}
+                            <div class="col-md-3 col-sm-6 col-xs-6 mix wow flipInX">
                                 <a data-toggle="modal" data-target="#portfolio-modal" data-name="patty"
-                                    title="Shop web app “Patty”" href="#" class="portfolio-box">
+                                    title="Shop web app “Patty”" href="{{ side_project.url }}" class="portfolio-box">
                                     <div class="portfolio-img">
-                                        <img src="{{ link.img }}" alt="">
+                                        <img src="{{ side_project.title }}" alt="">
                                     </div>
                                     <div class="portfolio-name">
-                                        <span>{{ link.name }}</span>
+                                        <span>{{ side_project.title }}</span>
                                     </div>
                                     <div class="portfolio-date">
-                                        <span>{{ link.url }}</span>
+                                        <span>{{ side_project.url }}</span>
                                     </div>
                                 </a>
                             </div>
@@ -291,7 +280,6 @@
             </div>
         </div>
     </section>
-    #}
 
     <footer class="footer text-center">
         <div class="container">
@@ -307,15 +295,9 @@
 
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
     <script src="js/jquery.placeholder.min.js"></script>
-
-    <!--Mix It Up-->
     <script src="assets/mixitup-v3/dist/mixitup.min.js"></script>
-
-    <!--THEME-->
     <script src="js/wow.min.js"></script>
-
     <script src="js/theme.js"></script>
 </body>
 
