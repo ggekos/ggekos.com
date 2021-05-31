@@ -23,6 +23,10 @@ side_projects:
         title: Lipock
         url: https://lipock.com
 
+    machicoulis:
+        title: Machicoulis
+        url: https://machicoulis.eu
+
 experience:
     primaalab:
         title: Team Leader application
@@ -58,7 +62,7 @@ experience:
             Stack 2 : Ruby On Rails, Postgres
             Devops : Ansible
 
-            Réalisations :
+            Works :
             CI/CD
             Doctrine cache
             Redis for session
